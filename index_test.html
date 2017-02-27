@@ -7,11 +7,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="test2.css"> 
+  <link rel="stylesheet" href="test.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+
 </head>
     <body>
+	
+	<!-- google analytics -->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-81075407-1', 'auto');
+  ga('send', 'pageview');
+</script>
+	<!-- end analytics -->
 	
 	<div class="container-fluid">
 	
@@ -22,10 +54,11 @@
 	<h1>Interrogare la <i>varia lectio</i>. Un apparato in movimento.</h1>	
 </div>
 
+<h4 style="float:right;margin-right:20px"><a href="index.html">it</a> / <a href="index-EN.html">en</a></h4><br/>
 
 
+<div class="legend">
 
-<div class="legend"><div class="row"><div class="col-xs-12">	<a href="index.html">Meglio questo o quello?</a></div></div> <!-- end row -->	
 <div class="row">
 <div class="col-xs-12">
 	<p>Per visualizzare tutte le varianti, clicca qui</p>
@@ -43,94 +76,49 @@
 </div>
 
 
-<form action='ricerca-test.php' method="post"> 
+<form action='ricerca_test.php' method="post"> 
 
-<div class="row">
-<div class="col-xs-12 col-sm-6 col-md-4">
-	<div class="form-group">
-		<legend>Tipo di variante:</legend>
-		<select name="change_cat" class="form-control">
-			<option value=""></option>
-			<option value="1">aggiunta/omissione</option>
-			<option value="2">inversione</option>
-			<option value="3">eco di verso precedente / anticipazione</option>
-			<option value="4">flessione morfologica</option>
-			<option value="5">lessicale</option>
-		</select>
-	</div>
-</div>
-</div> <!-- end row -->
-	
-	
-<div class="row">
-<div class="col-xs-12 col-sm-6 col-md-4">
-	<div class="form-group">
-		<legend>In rima:</legend>
-		<select name="rhyme" class="form-control">
-			<option value=""></option>
-			<option value="1">in rima</option>
-			<option value="2">non in rima</option>
-		</select>
-	</div>
-	</div>
-</div> <!-- end row -->
-
-
-<div class="row">
-<div class="col-xs-12 col-sm-6 col-md-4">
-	<div class="form-group">
-		<legend>Presente nella tradizione:</legend>
-		<select name="tradizione" class="form-control">
-			<option value=""></option>
-			<option value="1">presente nella tradizione</option>
-			<option value="2">assente nella tradizione</option>
-		</select>
-	</div>
-	</div>
-</div> <!-- end row -->
-
-
-
-<div class="row">
-<div class="col-xs-12 col-sm-6 col-md-4">
-	<div class="form-group">
-		<legend>Scegli testimoni da oppore:</legend>
-		<select name="witcomb" class="form-control">
-			<option value=""></option>
-			<option value="1">Toledano&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Riccardiano Chigiano (Petrocchi)</option>
-			<option value="6">Toledano (Petrocchi)&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Riccardiano Chigiano</option>
-			<option value="2">Riccardiano&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Toledano Chigiano (Petrocchi)</option>
-			<option value="5">Riccardiano (Petrocchi)&emsp;<strong>vs</strong>&emsp;&emsp;Toledano Chigiano </option>
-			<option value="3">Chigiano&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Toledano Riccardiano (Petrocchi) </option>
-			<option value="4">Chigiano (Petrocchi)&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Toledano Riccardiano   </option>
-			<option value="7">altro</option>
-
-		</select>
-	</div>
-	</div>
-</div> <!-- end row -->
-
-<div class="row">
-	<div class="col-xs-6 col-sm-6 col-md-6">
+<br/>
+<div class="row">  <!-- da / a -->
+	<div class="col-xs-4 col-sm-4 col-md-4">
 	<legend>Da:</legend>
 	</div>
-	<div class="col-xs-6 col-sm-6 col-md-6">
+	<div class="col-xs-4 col-sm-4 col-md-4">
 	<legend>A:</legend>
 	</div>
 </div> <!-- end row -->
 
-<div class="row">
-	<div class="col-xs-2 col-sm-2 col-md-2">
+<div class="row">  <!-- cantica e canto -->
+	<div class="col-xs-4 col-sm-4 col-md-4">
 	<div class="form-group">
-		<legend>Cantica:</legend>
-		<select name="from_cantica" class="form-control">
+		<legend>Cantica e canto:</legend>
+		<select name="from_canto" class="form-control">
 			<option value=""></option>
-			<option value="1">Inferno</option>
-			<option disabled>Purgatorio</option>
-			<option disabled>Paradiso</option>
+			<option value="1.01"> Inf I</option>
+			<option value="1.02">Inf II</option>
+			<option value="1.03">Inf III</option>				
+			<option value="1.04">Inf IV</option>
+			<option value="1.05">Inf V</option>
+			<option value="1.29">Inf XXIX</option>
+			<option value="1.30">Inf XXX</option>
+			<option value="1.31">Inf XXXI</option>
+			<option value="1.32">Inf XXXII</option>
+			<option value="1.33">Inf XXXIII</option>
+			<option value="1.34">Inf XXXIV</option>
+			<option value="2.01">Purg I</option>
+			<option value="2.02">Purg II</option>
+			<option value="2.03">Purg III</option>				
+			<option value="2.04">Purg IV</option>
+			<option value="2.05">Purg V</option>
+			<option value="3.01">Par I</option>
+			<option value="3.02">Par II</option>
+			<option value="3.03">Par III</option>				
+			<option value="3.04">Par IV</option>
+			<option value="3.05">Par V</option>
 		</select>
 	</div>
 	</div>
+	<!--
 	<div class="col-xs-2 col-sm-2 col-md-2">
 	<div class="form-group">
 		<legend>Canto:</legend>
@@ -138,9 +126,15 @@
 			<option value=""></option>
 			<option value="1">I</option>
 			<option value="2">II</option>
-			<option value="3">III</option>			
+			<option value="3">III</option>				
 			<option value="4">IV</option>
 			<option value="5">V</option>
+			<option value="29">XXIX</option>
+			<option value="30">XXX</option>
+			<option value="31">XXXI</option>
+			<option value="32">XXXII</option>
+			<option value="33">XXXIII</option>
+			<option value="34">XXXIV</option>
 		</select>
 	</div>
 	</div>
@@ -287,31 +281,51 @@
 		</select>
 	</div>
 	</div>
+	-->
 	
+	<!--
 	<div class="col-xs-2 col-sm-2 col-md-2">
 	<div class="form-group">
 		<legend>Cantica:</legend>
 		<select name="to_cantica" class="form-control">
 			<option value=""></option>
 			<option value="1">Inferno</option>
-			<option disabled>Purgatorio</option>
-			<option disabled>Paradiso</option>
+			<option value="2">Purgatorio</option>
+			<option value="3">Paradiso</option>
 		</select>
 	</div>
 	</div>
-	<div class="col-xs-2 col-sm-2 col-md-2">
+	-->
+	<div class="col-xs-4 col-sm-4 col-md-4">
 	<div class="form-group">
-		<legend>Canto:</legend>
+		<legend>Cantica e canto:</legend>
 		<select name="to_canto" class="form-control">
 			<option value=""></option>
-			<option value="1">I</option>
-			<option value="2">II</option>
-			<option value="3">III</option>				
-			<option value="4">IV</option>
-			<option value="5">V</option>
+			<option value="1.01"> Inf I</option>
+			<option value="1.02">Inf II</option>
+			<option value="1.03">Inf III</option>				
+			<option value="1.04">Inf IV</option>
+			<option value="1.05">Inf V</option>
+			<option value="1.29">Inf XXIX</option>
+			<option value="1.30">Inf XXX</option>
+			<option value="1.31">Inf XXXI</option>
+			<option value="1.32">Inf XXXII</option>
+			<option value="1.33">Inf XXXIII</option>
+			<option value="1.34">Inf XXXIV</option>
+			<option value="2.01">Purg I</option>
+			<option value="2.02">Purg II</option>
+			<option value="2.03">Purg III</option>				
+			<option value="2.04">Purg IV</option>
+			<option value="2.05">Purg V</option>
+			<option value="3.01">Par I</option>
+			<option value="3.02">Par II</option>
+			<option value="3.03">Par III</option>				
+			<option value="3.04">Par IV</option>
+			<option value="3.05">Par V</option>
 		</select>
 	</div>
 	</div>
+	<!--
 	<div class="col-xs-2 col-sm-2 col-md-2">
 	<div class="form-group">
 		<legend>Verso:</legend>
@@ -455,9 +469,73 @@
 		</select>
 	</div>
 	</div>
+	-->
+	
 </div> <!-- end row -->
 
 
+<div class="row">  <!-- scegli testimoni -->
+<div class="col-xs-12 col-sm-6 col-md-4">
+	<div class="form-group">
+		<legend>Scegli testimoni da oppore:</legend>
+		<select name="witcomb" class="form-control">
+			<option value=""></option>
+			<option value="1">Toledano&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Riccardiano Chigiano (Petrocchi)</option>
+			<option value="6">Toledano (Petrocchi)&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Riccardiano Chigiano</option>
+			<option value="2">Riccardiano&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Toledano Chigiano (Petrocchi)</option>
+			<option value="5">Riccardiano (Petrocchi)&emsp;<strong>vs</strong>&emsp;&emsp;Toledano Chigiano </option>
+			<option value="3">Chigiano&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Toledano Riccardiano (Petrocchi) </option>
+			<option value="4">Chigiano (Petrocchi)&emsp;&emsp;<strong>vs</strong>&emsp;&emsp;Toledano Riccardiano   </option>
+			<option value="7">altro</option>
+
+		</select>
+	</div>
+	</div>
+</div> <!-- end row -->
+
+<div class="row">  <!-- presente nella tradizione -->
+<div class="col-xs-12 col-sm-6 col-md-4">
+	<div class="form-group">
+		<legend>Presente nella tradizione precedente i codici del Boccaccio:</legend>
+		<select name="tradizione" class="form-control">
+			<option value=""></option>
+			<option value="1">presente nella tradizione</option>
+			<option value="2">assente nella tradizione</option>
+		</select>
+	</div>
+	</div>
+</div> <!-- end row -->
+
+
+<div class="row">  <!-- in rima -->
+<div class="col-xs-12 col-sm-6 col-md-4">
+	<div class="form-group">
+		<legend>In rima:</legend>
+		<select name="rhyme" class="form-control">
+			<option value=""></option>
+			<option value="1">in rima</option>
+			<option value="2">non in rima</option>
+		</select>
+	</div>
+	</div>
+</div> <!-- end row -->
+
+
+<div class="row"> <!-- tipo variante -->
+<div class="col-xs-12 col-sm-6 col-md-4">
+	<div class="form-group">
+		<legend>Tipo di variante:</legend>
+		<select name="change_cat" class="form-control">
+			<option value=""></option>
+			<option value="1">aggiunta/omissione</option>
+			<option value="2">inversione</option>
+			<option value="3">eco di verso precedente / anticipazione</option>
+			<option value="4">flessione morfologica</option>
+			<option value="5">lessicale</option>
+		</select>
+	</div>
+</div>
+</div> <!-- end row -->
 
 	<div class="button">
 		<input type="submit" class="btn btn-warning" value="Cerca">
@@ -466,37 +544,37 @@
 
 
 
-<hr/>
+<!-- <hr/>
 
-<h2>Esempi</h2>
+<h2>Varianti interne al <i>corpus</i> dei tre manoscritti boccacceschi.</h2>
 
 <br/>
 <div class="row">
-<div class="col-xs-12 col-sm-4 col-md-4">
-<p>Lezioni individuali del codice Toledano</p>
-<form action='sample-queries/toledano-singulares.php' method="post"> 
-				<input type="submit" class="btn btn-default" value="Cerca">
-			</form>
+	<div class="col-xs-12 col-sm-4 col-md-4">
+		<p>Lezioni individuali del codice Toledano</p>
+		<form action='sample-queries/toledano-singulares.php' method="post"> 
+			<input type="submit" class="btn btn-default" value="Cerca">
+		</form>
 
+	</div>
+
+	<div class="col-xs-12 col-sm-4 col-md-4">
+		<p>Lezioni individuali del codice Riccardiano</p>
+		<form action='sample-queries/riccard-singulares.php' method="post"> 
+			<input type="submit" class="btn btn-default" value="Cerca">
+		</form>
+
+	</div>
+
+	<div class="col-xs-12 col-sm-4 col-md-4">
+		<p>Lezioni individuali del codice Chigiano</p>
+		<form action='sample-queries/chigiano-singulares.php' method="post"> 
+			<input type="submit" class="btn btn-default" value="Cerca">
+		</form>
+
+	</div>
 </div>
-
-<div class="col-xs-12 col-sm-4 col-md-4">
-<p>Lezioni individuali del codice Riccardiano</p>
-<form action='sample-queries/riccardiano-singulares.php' method="post"> 
-				<input type="submit" class="btn btn-default" value="Cerca">
-			</form>
-
-</div>
-
-<div class="col-xs-12 col-sm-4 col-md-4">
-<p>Lezioni individuali del codice Chigiano</p>
-<form action='sample-queries/chigiano-singulares.php' method="post"> 
-				<input type="submit" class="btn btn-default" value="Cerca">
-			</form>
-
-</div>
-</div> <!-- end row -->
-<br/>
+<br/> -->
 
 	
 <!--  Tabelle con gli esempi, non ci servono più finché non aggiungiamo le checkbox anche alla scelta dei testimoni nella ricerca avanzata -->
@@ -505,6 +583,7 @@
 <hr/>
 <br/>
 <h3 style="text-align:center"><a href="about.html">Per saperne di pi&#249;</a></h3>
+<p style="text-align: center">A new version of <i>La</i> Commedia <i>di Boccaccio</i> will be out before Summer 2017</p>
 <br/>
 <hr/>
 	
@@ -512,6 +591,8 @@
 <div id="footer">
 <br/>
 <div id="footer-license"><a rel="license" href=" http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> sonia tempestini &amp; elena spadini 2016</div>
+<div>Immagine: particolare di Domenico di Michelino, <i>La Divina Commedia di Dante</i>. [Public domain], <a href="https://commons.wikimedia.org/wiki/File%3ADante_Domenico_di_Michelino_Duomo_Florence.jpg">attraverso Wikimedia Commons</a>.</div>
+
 
 <br/><br/><br/>
 

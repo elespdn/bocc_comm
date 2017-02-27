@@ -2,38 +2,57 @@
 <head>
   <title>Commedia Boccaccio</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.6/jqc-1.12.3/dt-1.10.12/b-1.2.1/b-colvis-1.2.1/b-print-1.2.1/r-2.1.0/datatables.min.css"/>
- 
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.6/jqc-1.12.3/dt-1.10.12/b-1.2.1/b-colvis-1.2.1/b-print-1.2.1/r-2.1.0/datatables.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  
+  <link href="http://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+  	  <link rel="stylesheet" href="test.css">
+	  <link rel="stylesheet" href="sample-queries/queries.css">
 
-<!-- inizializzare datatables -->
+	<script src="jquery-datatables/jquery.js"></script>
+	<script src="jquery-datatables/jquery.dataTables.js"></script>
+  
+<!-- Per far funzionare tables, attenzione a class e id su table (id deve corrispondere alla variabile
+ nello script qui sotto, la class copia semplicemente) e alla presenza di thead e tbody -->   
+		
 <script type="text/javascript">$(document).ready( function() {
     $('#results').dataTable(
     {"ordering":true,
     // così si possono ordinare le colonne
-    "order": [[0, "asc"]],
+    "order": [],
     // initial order to apply to the table
     "paging":true,
-    // con sto pezzetto paging c'è la possibilità di scegliere quanti record vedere in una pagina    
+    // con sto pezzetto paging c'è la possibilità di scegliere quanti record vedere in una pagina
+    
     });
     });
-</script>
-       
+    </script>
+	
+	<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $(".commento").toggle();
+    });
+});
+</script>    
+	
+ 
+        
 
 
 </head>
  <body>
-
+s
  <div class="container-fluid">
  
  <div class="title">
  <div class="backhome">
-	<a class="btn btn-default btn-lg" href="../index2.html" role="button">
+	<a class="btn btn-default btn-lg" href="../index_test.html" role="button">
 		<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 		<span class="sr-only">Home:</span>
 	</a>
-	&emsp;<a href="../index2.html">Ricerca e pagina principale</a>
+	&emsp;<a href="../index_test.html">Ricerca e pagina principale</a>
  </div>
 </div>
 
@@ -57,7 +76,9 @@ $to_verso=$_POST['to_verso'];
 $witcomb=$_POST['witcomb'];
 
 
-$con = mysqli_connect("localhost", "u300618614_user", "XWAJJXej9C", "u300618614_db") or die("Failed to connect to MySql.");
+require 'connexion.php';
+
+// $con = mysqli_connect("localhost", "u300618614_user", "XWAJJXej9C", "u300618614_db") or die("Failed to connect to MySql.");
 
 // $where = array(); $where est un array, c'est-à-dire un tableau où on insère des données à fur et à mesure
 //Données insérées dans $where :
@@ -93,12 +114,12 @@ if ($source != '') {
 
 
 if ($from_cantica != '') {
-	$query_from_cantica = "AND versi.cantica >= " . $from_cantica . "";
+	$query_from_cantica = "AND versi.cantica_id >= " . $from_cantica . "";
 } else {
 	$query_from_cantica = "";
 }
 if ($from_canto != '') {
-	$query_from_canto = "AND versi.canto >= " . $from_canto . "";
+	$query_from_canto = "AND versi.canto_numero >= " . $from_canto . "";
 } else {
 	$query_from_canto = "";
 }
@@ -110,12 +131,12 @@ if ($from_verso != '') {
 
 
 if ($to_cantica != '') {
-	$query_to_cantica = "AND versi.cantica <= " . $to_cantica . "";
+	$query_to_cantica = "AND versi.cantica_id <= " . $to_cantica . "";
 } else {
 	$query_to_cantica = "";
 } 
 if ($to_canto != '') {
-	$query_to_canto = "AND versi.canto <= " . $to_canto . "";
+	$query_to_canto = "AND versi.canto_numero <= " . $to_canto . "";
 } else {
 	$query_to_canto = "";
 }
@@ -184,21 +205,20 @@ $user_query=$_POST['user_query'];
 
 if($user_query=='')
 {
-$user_query = "SELECT DISTINCT cantica.cantica, canto.canto, versi.verso, la.lezione AS lezionea, lb.lezione AS lezioneb, lc.lezione AS lezionec, lp.lezione AS lezionep, categoriaCambiamento.categoria, rima.rima, presenteTradizione.presente, annotazioni.commento 
+$user_query = "SELECT DISTINCT cantica.cantica, canto.canto, versi.verso, la.lezione AS lezionea, la.presenteTradizione_id, lb.lezione AS lezioneb, lb.presenteTradizione_id, lc.lezione AS lezionec, lc.presenteTradizione_id, lp.lezione AS lezionep, categoriaCambiamento.categoria, rima.rima, annotazioni.commento 
 FROM testimoni ta, lezioni la, testimoni tb, lezioni lb, testimoni tc, lezioni lc, testimoni tp, lezioni lp, annotazioni
 INNER JOIN versi
 ON annotazioni.versi_id = versi.id
 INNER JOIN cantica
 ON versi.cantica_id = cantica.id
 INNER JOIN canto
-ON versi.canto_id = canto.id
+ON versi.canto_numero = canto.numero
 INNER JOIN categoriaCambiamento
 ON annotazioni.categoriaCambiamento_id = categoriaCambiamento.id
 INNER JOIN rima
 ON annotazioni.rima_id = rima.id
-INNER JOIN presenteTradizione
-ON annotazioni.presenteTradizione_id = presenteTradizione.id
-WHERE ta.id=1 AND tb.id=2 AND tc.id=3 AND tp.id=4 AND la.testimoni_id=ta.id AND lb.testimoni_id=tb.id AND lc.testimoni_id=tc.id AND lp.testimoni_id=tp.id AND annotazioni.versi_id=la.versi_id AND annotazioni.versi_id=lb.versi_id AND annotazioni.versi_id=lc.versi_id AND annotazioni.versi_id=lp.versi_id ".$query_change_cat." ".$query_rhyme." ".$query_tradizione." ".$query_from_cantica." ".$query_from_canto." ".$query_from_verso." ".$query_to_cantica." ".$query_to_canto." ".$query_to_verso." ".$query_witcomb."";
+WHERE ta.id=1 AND tb.id=2 AND tc.id=3 AND tp.id=4 AND la.testimoni_id=ta.id AND lb.testimoni_id=tb.id AND lc.testimoni_id=tc.id AND lp.testimoni_id=tp.id AND annotazioni.versi_id=la.versi_id AND annotazioni.versi_id=lb.versi_id AND annotazioni.versi_id=lc.versi_id AND annotazioni.versi_id=lp.versi_id ".$query_change_cat." ".$query_rhyme." ".$query_tradizione." ".$query_from_cantica." ".$query_from_canto." ".$query_from_verso." ".$query_to_cantica." ".$query_to_canto." ".$query_to_verso." ".$query_witcomb."
+ORDER BY cantica.id, canto.id, versi.verso";
 }
 
 // per controllare la query         echo "$user_query";
@@ -223,7 +243,7 @@ echo"</h4>";
 
 echo "<table id='results' class='hover cell-border'>";
 
-echo "<thead><tr><th></th><th></th><th></th><th>Toledano</th><th>Riccardiano</th><th>Chigiano</th><th>Tipo di variante</th><th>In rima</th><th>Presente nella tradizione</th><th>Ed. Petrocchi</th><th>Nota</th></tr></thead><tbody>";
+echo "<thead><tr><th></th><th></th><th></th><th>Toledano</th><th>Riccardiano</th><th>Chigiano</th><th>Tipo di variante</th><th>In rima</th><th>Ed. Petrocchi</th><th></th></tr></thead><tbody>";
 
 while ($row=mysqli_fetch_array($query))
 
@@ -237,7 +257,7 @@ $myvar = "<button>Nota</button><div class='commento'>" . $commento . "</div>";
 
 	
 echo"<tr>";
-echo"<td>";
+echo"<td style='background-color:green'>";
 echo $row['cantica'];
 echo"</td>";
 echo"<td>";
@@ -246,7 +266,8 @@ echo"</td>";
 echo"<td>";
 echo $row['verso'];
 echo"</td>";
-echo"<td><strong>";
+$presentea == 'la.presenteTradizione_id';
+echo "<td ".($presentea = 1 ? "style='background-color:green'" : "")." ><strong>";
 echo $row['lezionea'];
 echo"</strong></td>";
 echo"<td><strong>";
@@ -260,9 +281,6 @@ echo $row['categoria'];
 echo"</td>";
 echo"<td>";
 echo $row['rima'];
-echo"</td>";
-echo"<td>";
-echo $row['presente'];
 echo"</td>";
 echo"<td>";
 echo $row['lezionep'];
