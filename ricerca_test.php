@@ -43,7 +43,6 @@ $(document).ready(function(){
 
 </head>
  <body>
-s
  <div class="container-fluid">
  
  <div class="title">
@@ -97,11 +96,23 @@ if ($rhyme != '') {
 }
 
 
+/*if ($tradizione != '') {
+	$query_tradizione = "AND (la.presenteTradizione_id = " . $tradizione . " OR lb.presenteTradizione_id = " . $tradizione . " OR lc.presenteTradizione_id = " . $tradizione . ")";
+} else {
+	$query_tradizione = "";
+}*/
+
 if ($tradizione != '') {
-	$query_tradizione = "AND presenteTradizione.id = " . $tradizione . "";
+	if ($tradizione > 1) {
+		$query_tradizione = "AND (la.presenteTradizione_id = " . $tradizione . " OR lb.presenteTradizione_id = " . $tradizione . " OR lc.presenteTradizione_id = " . $tradizione . ")";
+	} else {
+		$query_tradizione = "AND la.presenteTradizione_id=1 AND lb.presenteTradizione_id=1 AND lc.presenteTradizione_id=1";
+	}
+	
 } else {
 	$query_tradizione = "";
 }
+
 
 
 /*  per il momento lo togliamo
@@ -205,7 +216,7 @@ $user_query=$_POST['user_query'];
 
 if($user_query=='')
 {
-$user_query = "SELECT DISTINCT cantica.cantica, canto.canto, versi.verso, la.lezione AS lezionea, la.presenteTradizione_id, lb.lezione AS lezioneb, lb.presenteTradizione_id, lc.lezione AS lezionec, lc.presenteTradizione_id, lp.lezione AS lezionep, categoriaCambiamento.categoria, rima.rima, annotazioni.commento 
+$user_query = "SELECT DISTINCT cantica.cantica, canto.canto, versi.verso, la.lezione AS lezionea, la.presenteTradizione_id AS presentea, lb.lezione AS lezioneb, lb.presenteTradizione_id AS presenteb, lc.lezione AS lezionec, lc.presenteTradizione_id AS presentec, lp.lezione AS lezionep, categoriaCambiamento.categoria, rima.rima, annotazioni.commento 
 FROM testimoni ta, lezioni la, testimoni tb, lezioni lb, testimoni tc, lezioni lc, testimoni tp, lezioni lp, annotazioni
 INNER JOIN versi
 ON annotazioni.versi_id = versi.id
@@ -217,7 +228,8 @@ INNER JOIN categoriaCambiamento
 ON annotazioni.categoriaCambiamento_id = categoriaCambiamento.id
 INNER JOIN rima
 ON annotazioni.rima_id = rima.id
-WHERE ta.id=1 AND tb.id=2 AND tc.id=3 AND tp.id=4 AND la.testimoni_id=ta.id AND lb.testimoni_id=tb.id AND lc.testimoni_id=tc.id AND lp.testimoni_id=tp.id AND annotazioni.versi_id=la.versi_id AND annotazioni.versi_id=lb.versi_id AND annotazioni.versi_id=lc.versi_id AND annotazioni.versi_id=lp.versi_id ".$query_change_cat." ".$query_rhyme." ".$query_tradizione." ".$query_from_cantica." ".$query_from_canto." ".$query_from_verso." ".$query_to_cantica." ".$query_to_canto." ".$query_to_verso." ".$query_witcomb."
+WHERE ta.id=1 AND tb.id=2 AND tc.id=3 AND tp.id=4 AND la.testimoni_id=ta.id AND lb.testimoni_id=tb.id AND lc.testimoni_id=tc.id AND lp.testimoni_id=tp.id AND annotazioni.versi_id=la.versi_id AND annotazioni.versi_id=lb.versi_id AND annotazioni.versi_id=lc.versi_id AND annotazioni.versi_id=lp.versi_id
+ ".$query_change_cat." ".$query_rhyme." ".$query_tradizione." ".$query_from_cantica." ".$query_from_canto." ".$query_from_verso." ".$query_to_cantica." ".$query_to_canto." ".$query_to_verso." ".$query_witcomb."
 ORDER BY cantica.id, canto.id, versi.verso";
 }
 
@@ -239,6 +251,12 @@ echo"<h4 class='risultati'>";
 echo"Risultati: ";
 echo $num_rows;
 echo"</h4>";
+echo"In ";
+echo"<span style='background-color:LightBlue'>";
+echo"azzurro";
+echo"</span>";
+echo" le lezioni assenti nella tradizione precedente a Boccaccio.";
+echo"<br/><br/>";
 
 
 echo "<table id='results' class='hover cell-border'>";
@@ -257,7 +275,7 @@ $myvar = "<button>Nota</button><div class='commento'>" . $commento . "</div>";
 
 	
 echo"<tr>";
-echo"<td style='background-color:green'>";
+echo"<td>";
 echo $row['cantica'];
 echo"</td>";
 echo"<td>";
@@ -266,14 +284,13 @@ echo"</td>";
 echo"<td>";
 echo $row['verso'];
 echo"</td>";
-$presentea == 'la.presenteTradizione_id';
-echo "<td ".($presentea = 1 ? "style='background-color:green'" : "")." ><strong>";
+echo "<td ".($row['presentea'] == '2' ? "style='background-color:LightBlue'" : "")." ><strong>";
 echo $row['lezionea'];
 echo"</strong></td>";
-echo"<td><strong>";
+echo "<td ".($row['presenteb'] == '2' ? "style='background-color:LightBlue'" : "")." ><strong>";
 echo $row['lezioneb'];
 echo"</strong></td>";
-echo"<td><strong>";
+echo "<td ".($row['presentec'] == '2' ? "style='background-color:LightBlue'" : "")." ><strong>";
 echo $row['lezionec'];
 echo"</strong></td>";
 echo"<td>";
