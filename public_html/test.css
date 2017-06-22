@@ -1,0 +1,107 @@
+
+a:hover, a {
+	color:inherit
+}
+
+
+
+/*
+.title {
+	background-image:url("images/Andrea_Castagno_Boccaccio.jpg");
+	padding:7% 0% 1% 1%;
+}
+.title-h {
+	background-color:OldLace; 
+	color:DarkSlateGrey;
+	border-radius:0px 15px 15px 0px;
+	padding:1%;
+	display:inline;
+	line-height: 1.9
+}
+*/
+
+.title {
+	background-image:url("images/bocc.jpg");
+	color:white;
+	padding:1%;
+	background-size:100% auto;
+	background-repeat:no-repeat;
+}
+
+
+
+.legend {
+	margin:50px 0px 10px 0px;
+	text-align:center
+}
+
+.border-bottom {
+	border-bottom:30px solid white
+}
+
+
+td {
+	border:none
+}
+
+legend {
+	display:block;
+	width:100%;
+	padding:0;
+	margin-bottom:3px;
+	font-size:1em;
+	font-weight:bold;
+	line-height:inherit;
+	border:0}
+	
+	
+.row {
+	margin-bottom:10px
+}
+
+.button {
+	text-align:center;
+	margin:20px 0px 60px 0px
+}
+
+.AliceBlue {
+	background-color: AliceBlue
+}
+
+
+.FloralWhite {
+	background-color: FloralWhite
+}
+
+.Ivory {
+	background-color: Ivory
+}
+
+
+.SeaShell {
+	background-color: SeaShell
+}
+
+.notabene {
+	text-align:center;
+	margin-top:5%
+}
+
+.about {
+	padding-top:3%;
+	padding-right:5%;
+	padding-left:3%;
+	text-align:justify;
+}
+
+
+.news {
+	float: right;
+	margin-top: 2%;
+	background-color: rgba(3,169,244,0.90);
+	width: 12%;
+	padding:10px;
+	border-radius: 15px;
+	text-align: justify;
+}
+

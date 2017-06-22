@@ -1,0 +1,37 @@
+
+th {
+	text-align:left
+}
+
+h2 {text-align:center}
+
+.backhome {
+	font-size:1.3em
+}
+
+.title {
+	padding:3%;
+}
+.container-fluid {
+	padding-top:15px
+}
+
+a:hover {
+	color:inherit
+}
+
+.risultati {
+	text-align:center
+}
+
+.commento {
+	display:none
+}
+
+button {
+	border:0px;
+	padding:10%;
+	background-color:Tan;
+	color:white;
+	border-radius:10%
+}

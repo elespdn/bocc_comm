@@ -1,0 +1,151 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Commedia Boccaccio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="test.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+    <body>
+	
+	<div class="container-fluid" style="padding-top:15px">
+	
+	<div class="title">
+ <div style="padding:3%;font-size:1.3em">
+	<a class="btn btn-default btn-lg" href="../index-EN.html" role="button">
+		<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+		<span class="sr-only">Home:</span>
+	</a>
+	&emsp;<a href="../index-EN.html">Home page and search</a>
+ </div>
+</div>
+
+<h4 style="float:right;margin-right:20px"><a href="about.html">it</a> / <a href="about-EN.html">en</a></h4><br/>
+
+<p class="notabene">N.b.: <i>Boccaccio's Commedia</i> is a ongoing research project and a new versione will be out before Summer 2017.<br/>
+More materials will be uploaded and some of the categories used for the classification of variants may change.</p><br/>
+	
+	<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>What is in the website</h2>
+	<p>The <i>varia lectio</i> among the three manuscripts copied by Giovanni Boccaccio which contain the text of Dante's <i>Commedia</i> (Toledano 104.6; Riccardiano 1035; Chigiano L VI 213).</p>
+	<p>Materials currently available in the website: <br/>Inf. I, II, III, IV, V, XXIX, XXX, XXXI, XXXII, XXXIII, XXXIV; <br/>Purg. I, II, III, IV, V; <br/>Par. I, II, III, IV, V</p>
+	</div>
+	
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>How to use the website</h2>
+	<p>In the home page you can choose among simple and advanced search.</p>
+	<p>The <u>simple search</u> allows you to visualize <u>all</u> the variants stored in the database.</p>
+	<p>Using the <u>advanced search</u>, you can choose one or more filters in order to select variants.</p>
+	The <u>result pages</u> (ONLY IN ITALIAN) allows for
+	<ul>
+		<li>looking for a word (in the <u>Cerca</u> field, top right)</li>
+		<li>ordering the columns content (thoughout the arrows on the top of each column)</li>
+		<li>visualizing <u>notes</u> (press a Note button, for opening or closing all notes).</li>
+	</ul>
+	</div>
+	</div> <!-- end row -->
+
+	
+	<hr/>
+
+	<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>What is behind the website</h2>
+	Through the website you can query a database conceived for this project. In the database are recorded:
+	<ul>
+		<li>verses</li>
+		<li>readings</li>
+		<li>combinations of witnesses</li>
+		<li>info about the variants</li>
+	</ul>
+	Among the latter:
+	<ul>
+		<li>the type of variant</li>
+			<ul>
+				<li>addition or omission: when one word, and especially conjunctions, pronouns and articles, is added or omitted</li>
+				<li>transposition: when one or more words are inverted</li>
+				<li>echo of previous verse or anticipation: when the variant is caused by the anticipation or the repetition of one or more words from a preceding or following verse</li>
+				<li>morphological variant: when the variant consists of a difference in the inflection</li>
+				<li>lexical variant: or semantic, consists of the substitution of one or more words (nouns, adjective or verbs), which are not caused by anticipation or echo, nor by paleographical errors</li>
+			</ul>
+		<li>if the variant is part of the rhyme</li>
+		<li>if the variant is present or absent in the manuscript transmission preceding Boccaccio's <i>codices</i>; for this purpose it has been used the apparatus in <i>La </i>Commedia<i> secondo l'antica vulgata</i> ed. by Giorgio Petrocchi (considering therefore only the 27 manuscripts of the <i>antica vulgata</i> taken into account by Petrocchi).</li>
+	</ul>
+	</div>
+	
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>Criteria for the transcription</h2>
+	<p>Transcription of the manuscripts: <i>diplomatica-interpretativa</i>.</p>
+	<p>Words in <i>scriptio continua</i> are split, unless it requires the insertion of diacritics; abbreviations are expanded; distinction has been made between <i>u</i> and <i>v</i>. Boccaccio's autograph marginalia are indicated with an asterisk: e.g. <i>coperte *al. vestite</i>. Three types of marginalia have been recognized: variants that are not preceded by any sign, which correct errors in the copy; variants preceded by <i>al'</i> (aliter), which record an indifferent variant (<i>variante adiafora</i>); variants preceded by <i>c'</i> (corrige or credo), which record corrections or conjectures.</p>
+	
+	<br/><br/>
+	<h2>Technical note</h2>
+	<p>You can look at the structure of the relational database below (click to expand). Data are inserted from csv files, transformed into sql scripts. The website uses the <u><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></u> e <u><a href="https://www.datatables.net/" target="_blank">DataTables</a></u> libraries. <br/>Future implementations: print functionality.</p>
+	<a href="images/db.png"><img src="images/db.png" width="50%" style="border:1px solid grey"/></a>
+	
+	</div>
+	</div> <!-- end row -->
+	
+	
+	<hr/>
+	
+	<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 about">
+	<h2>How to quote</h2>
+	Tempestini, Sonia e Elena Spadini. 2016. <i>La</i> Commedia <i>di Boccaccio. Un apparato in movimento.</i> &lt;www.boccacciocommedia.it&gt;.
+	<br/>It is possible to specify <i>cantica</i>, <i>canto</i> and <i>verso</i>, as in the example:
+	<br/>Tempestini, Sonia e Elena Spadini. 2016. <i>La</i> Commedia <i>di Boccaccio. Un apparato in movimento.</i> Inf. I, 47. &lt;www.boccacciocommedia.it&gt;.
+	<br/>
+	<b>N.b.</b>: because <i>La</i> Commedia <i>di Boccaccio</i> is an ongoing project, the materials on the website may change. In order to ensure the stability of the references, you may want to use the 'Save a page' service at archive.org. To create a snapshot of the page, insert the link in 'Save page now' at <u><a href="http://archive.org/web/" target="_blank">archive.org/web</a></u>.
+	</div>
+	</div> <!-- end row -->
+	
+	<hr/>
+	
+	<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>Credits</h2>
+	Transcription and collation of the manuscripts, annotation of the variants: Sonia Tempestini
+	<br/>Database and website design: Elena Spadini e Sonia Tempestini
+	<br/>Database and website creation: Elena Spadini
+	</div>
+	
+	<div class="col-xs-12 col-sm-6 col-md-6 about" style="text-align:left">
+	<h2>Contacts</h2>
+	Email: info@boccacciocommedia.it
+	<br/><u><a href="http://www.civita.usi.ch/persona/tempestini-sonia" target="_blank">Sonia Tempestini</a></u> (Università della Svizzera italiana): sonia.tempestini@usi.ch  /  tempestini.sonia@gmail.com 
+	<br/><u><a href="https://www.huygens.knaw.nl/elena-spadini/" target="_blank">Elena Spadini</a></u> (Sapienza Università di Roma / Huygens ing): elena.spadini@huygens.knaw.nl  /  spadinielena@gmail.com
+	</div>
+	</div> <!-- end row -->
+	
+	<hr/>
+	
+	<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 about">
+	<h3>Poster presented at <a href="http://cilfr2016.let.uniroma1.it/" target="_blank">CILFR 2016</a> and <a href="https://sites.google.com/a/unive.it/aiucd2016/home" target="_blank">AIUCD 2016</a></h3>
+	<br/>
+	<a href="images/poster.jpg"><img src="images/poster.png" width="60%" style="border:1px solid grey"></a>
+	</div>
+	</div> <!-- end row -->
+
+	<br/><br/><br/>
+	
+	<hr/>
+
+<div id="footer">
+<br/>
+<div id="footer-license"><a rel="license" href=" http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> sonia tempestini &amp; elena spadini 2016</div>
+<br/><br/>
+
+
+</div>	
+	
+	</div> <!-- end container -->
+	</body>
+</html>

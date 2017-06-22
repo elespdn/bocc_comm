@@ -1,0 +1,152 @@
+<!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Commedia Boccaccio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="test.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+    <body>
+	
+	<div class="container-fluid" style="padding-top:15px">
+	
+	<div class="title">
+ <div style="padding:3%;font-size:1.3em">
+	<a class="btn btn-default btn-lg" href="../index.html" role="button">
+		<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+		<span class="sr-only">Home:</span>
+	</a>
+	&emsp;<a href="../index.html">Ricerca e pagina principale</a>
+ </div>
+</div>
+
+<h4 style="float:right;margin-right:20px"><a href="about.html">it</a> / <a href="about-EN.html">en</a></h4><br/>
+
+
+<p class="notabene">N.b.: <i>La </i>Commedia<i> di Boccaccio</i> è un progetto di ricerca in corso.<br/>
+I materiali e le categorie possono subire modifiche e nuovi dati saranno inseriti.</p><br/>
+	
+	<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>Cosa contiene il sito</h2>
+	<p>La <i>varia lectio</i>, emersa dalla collazione integrale, interna ai tre codici autografi di Giovanni Boccaccio contenenti il testo della Commedia dantesca (Codici Toledano 104.6; Riccardiano 1035; Chigiano L VI 213).</p>
+	<p>Materiali presenti nel sito ad oggi: <br/>Inf. I, II, III, IV, V, VI, VII, VIII, IX, X, XXIX, XXX, XXXI, XXXII, XXXIII, XXXIV; <br/>Purg. I, II, III, IV, V; <br/>Par. I, II, III, IV, V</p>
+	</div>
+	
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>Come usare il sito</h2>
+	<p>La pagina principale offre due possibilità di ricerca: semplice o avanzata.</p>
+	<p>La <u>ricerca semplice</u> permette di visualizzare <u>tutte</u> le varianti presenti nel database.</p>
+	<p>La <u>ricerca avanzata</u> permette di utilizzare uno o più criteri per selezionare le varianti da visualizzare.</p>
+	Le pagine dei <u>risultati di ricerca</u> offrono la possibilità di
+	<ul>
+		<li>ricercare una parola (nel campo <u>Cerca</u> in alto a destra)</li>
+		<li>ordinare le colonne (tramite le freccette sopra ogni colonna)</li>
+		<li>visualizzare le <u>note</u> (premere su uno qualsiasi dei bottoni Nota per aprire o chiudere tutte le note).</li>
+	</ul>
+	</div>
+	</div> <!-- end row -->
+
+	
+	<hr/>
+
+	<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>Cosa c'è dietro al sito</h2>
+	Il sito permette di interrogare un database appositamente concepito. Nel database sono stati registrati:
+	<ul>
+		<li>versi</li>
+		<li>lezioni</li>
+		<li>combinazioni tra i testimoni</li>
+		<li>informazioni sulle varianti.</li>
+	</ul>
+	Tra queste ultime, in particolare:
+	<ul>
+		<li>il tipo di variante</li>
+			<ul>
+				<li>aggiunta o omissione: quando una parola <i>breve</i>, per lo più congiunzioni, pronomi e articoli, è aggiunta o omessa</li>
+				<li>inversione: quando l’ordine di due o più parole risulta invertito</li>
+				<li>eco di verso precedente o anticipazione: quando la variante è attribuibile all’anticipazione o alla ripresa di una o più parole da un verso precedente o da un verso successivo</li>
+				<li>flessione: quando la variante nasce da una lieve divergenza nella flessione grammaticale, ovvero da un cambiamento del numero, del genere o di tempo e modo verbale</li>
+				<li>lessicale: o semantica, sostituzione di parole (sostantivi, aggettivi o verbi) non attribuibile a fenomeni di anticipazione/eco o possibili errori paleografici</li>
+			</ul>
+		<li>se la variante è anche un rimante</li>
+		<li>se la variante è presente o assente nella tradizione precedente i codici del Boccaccio, secondo quanto riportato nell’apparato dell’edizione “La <i>Commedia</i> secondo l’antica vulgata” a cura di Giorgio Petrocchi (si considerano dunque esclusivamente i 27 codici dell’antica vulgata presi in considerazione dal Petrocchi).</li>
+	</ul>
+	</div>
+	
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>Criteri di trascrizione</h2>
+	<p>Trascrizione dei manoscritti: diplomatica-interpretativa.</p>
+	<p>Divisione delle parole in <i>scriptio continua</i>, tranne quando comporta l’inserimento di segni diacritici; abbreviazioni sciolte senza segnalazione; distinzione u/v. Le lezioni autografe in margine sono segnalate con un asterisco: es. coperte *al. vestite. Si riscontrano tre tipologie di varianti marginali: varianti non precedute da alcun segno, che dunque sanano errori di copia, varianti precedute da al’ (aliter) ad indicare lezioni adiafore e infine varianti precedute da c’ (corrige o credo) che indicano correzioni o congetture.</p>
+	
+	<br/><br/>
+	<h2>Nota tecnica</h2>
+	<p>La struttura della base dati relazionale si può vedere qui sotto. I dati sono inseriti a partire da file csv, trasformati in script sql. Il sito usa le librerie <u><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></u> e <u><a href="https://www.datatables.net/" target="_blank">DataTables</a></u>. <br/>Future implementazioni: funzionalità di stampa.</p>
+	<a href="images/db.png"><img src="images/db.png" width="50%" style="border:1px solid grey"/></a>
+	
+	</div>
+	</div> <!-- end row -->
+	
+	
+	<hr/>
+	
+	<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 about">
+	<h2>Come citare</h2>
+	Tempestini, Sonia e Elena Spadini. 2015-17. <i>La</i> Commedia <i>di Boccaccio. Un apparato in movimento.</i> &lt;www.boccacciocommedia.it&gt;.
+	<br/>&Egrave; possibile specificare cantica, canto e verso, come nell'esempio:
+	<br/>Tempestini, Sonia e Elena Spadini. 2015-17. <i>La</i> Commedia <i>di Boccaccio. Un apparato in movimento.</i> Inf. I, 47. &lt;www.boccacciocommedia.it&gt;.
+	<br/>
+	<b>N.b.</b>: trattandosi di un progetto in corso, i materiali nel sito potrebbero subire delle modifiche. Un modo per assicurare la stabilità delle referenze è utilizzare un'istantanea del link, utilizzando il servizio di archive.org 'Save a page'; per creare l'istantanea, inserire il link della pagina da citare in 'Save page now' alla pagina <u><a href="http://archive.org/web/" target="_blank">archive.org/web</a></u>.
+	</div>
+	</div> <!-- end row -->
+	
+	<hr/>
+	
+	<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6 about">
+	<h2>Credits</h2>
+	Trascrizione e collazione manoscritti, annotazione varianti: Sonia Tempestini
+	<br/>Disegno database e sito: Elena Spadini e Sonia Tempestini
+	<br/>Creazione database e sito: Elena Spadini
+	</div>
+	
+	<div class="col-xs-12 col-sm-6 col-md-6 about" style="text-align:left">
+	<h2>Contatti</h2>
+	Email: info@boccacciocommedia.it
+	<br/><u><a href="http://www.civita.usi.ch/persona/tempestini-sonia" target="_blank">Sonia Tempestini</a></u> (Università della Svizzera italiana): sonia.tempestini@usi.ch  /  tempestini.sonia@gmail.com 
+	<br/><u><a href="https://www.huygens.knaw.nl/elena-spadini/" target="_blank">Elena Spadini</a></u> (Sapienza Università di Roma / Huygens ing): elena.spadini@huygens.knaw.nl  /  spadinielena@gmail.com
+	</div>
+	</div> <!-- end row -->
+	
+	<hr/>
+	
+	<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 about">
+	<h3>Poster presentato al CILFR 2016</h3>
+	<br/>
+	<a href="images/poster.jpg"><img src="images/poster.png" width="60%" style="border:1px solid grey"></a>
+	</div>
+	</div> <!-- end row -->
+
+	<br/><br/><br/>
+	
+	<hr/>
+
+<div id="footer">
+<br/>
+<div id="footer-license"><a rel="license" href=" http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> sonia tempestini &amp; elena spadini 2015-2017</div>
+<br/><br/>
+
+
+</div>	
+	
+	</div> <!-- end container -->
+	</body>
+</html>
