@@ -78,8 +78,6 @@ $witcomb=$_POST['witcomb'];
 
 require 'connexion.php';
 
-// $con = mysqli_connect("localhost", "u300618614_user", "XWAJJXej9C", "u300618614_db") or die("Failed to connect to MySql.");
-
 // $where = array(); $where est un array, c'est-à-dire un tableau où on insère des données à fur et à mesure
 //Données insérées dans $where :
  
