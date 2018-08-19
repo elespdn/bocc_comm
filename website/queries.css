@@ -24,14 +24,11 @@ a:hover {
 	text-align:center
 }
 
-.commento {
-	display:none
-}
 
 button {
 	border:0px;
 	padding:10%;
-	background-color:Tan;
+	background-color:#b9b2b2;
 	color:white;
 	border-radius:10%
 }

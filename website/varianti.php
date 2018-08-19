@@ -1,4 +1,4 @@
-	<html>
+  <html>
 <head>
   <title>Commedia Boccaccio</title>
   <meta charset="utf-8">
@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   
   <link href="http://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
-  	  <link rel="stylesheet" href="test.css">
-	  <link rel="stylesheet" href="queries.css">
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="queries.css">
 
-	<script src="jquery-datatables/jquery.js"></script>
-	<script src="jquery-datatables/jquery.dataTables.js"></script>
+  <script src="jquery-datatables/jquery.js"></script>
+  <script src="jquery-datatables/jquery.dataTables.js"></script>
   
 <!-- Per far funzionare tables, attenzione a class e id su table (id deve corrispondere alla variabile
  nello script qui sotto, la class copia semplicemente) e alla presenza di thead e tbody -->   
-		
+    
 <script type="text/javascript">$(document).ready( function() {
     $('#results').dataTable(
     {"ordering":true,
@@ -28,15 +28,18 @@
     });
     });
     </script>
-	
-	<script>
+
+  
+<script>
+// select the button, toggle the following div
+
 $(document).ready(function(){
     $("button").click(function(){
-        $(".commento").toggle();
+        $(this.nextSibling).toggle();
     });
 });
 </script>    
-	
+  
  
         
 
@@ -47,11 +50,11 @@ $(document).ready(function(){
  
  <div class="title">
  <div class="backhome">
-	<a class="btn btn-default btn-lg" href="index.html" role="button">
-		<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-		<span class="sr-only">Home:</span>
-	</a>
-	&emsp;<a href="index.html">Ricerca e pagina principale</a>
+  <a class="btn btn-default btn-lg" href="index.html" role="button">
+    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+    <span class="sr-only">Home:</span>
+  </a>
+  &emsp;<a href="index.html">Ricerca e pagina principale</a>
  </div>
 </div>
 
@@ -78,52 +81,53 @@ $witcomb=$_POST['witcomb'];
 
 require 'connexion.php';
 
+// $con = mysqli_connect("host", "user", "pwd", "db") or die("Failed to connect to MySql.");
 
 // $where = array(); $where est un array, c'est-à-dire un tableau où on insère des données à fur et à mesure
 //Données insérées dans $where :
  
  
 if ($change_cat != '') {
-	$query_change_cat = "AND categoriaCambiamento.id = " . $change_cat . "";
+  $query_change_cat = "AND categoriaCambiamento.id = " . $change_cat . "";
 } else {
-	$query_change_cat = "";
+  $query_change_cat = "";
 }
 
 if ($rhyme != '') {
-	$query_rhyme = "AND rima.id = " . $rhyme . "";
+  $query_rhyme = "AND rima.id = " . $rhyme . "";
 } else {
-	$query_rhyme = "";
+  $query_rhyme = "";
 }
 
 
 /*if ($tradizione != '') {
-	$query_tradizione = "AND (la.presenteTradizione_id = " . $tradizione . " OR lb.presenteTradizione_id = " . $tradizione . " OR lc.presenteTradizione_id = " . $tradizione . ")";
+  $query_tradizione = "AND (la.presenteTradizione_id = " . $tradizione . " OR lb.presenteTradizione_id = " . $tradizione . " OR lc.presenteTradizione_id = " . $tradizione . ")";
 } else {
-	$query_tradizione = "";
+  $query_tradizione = "";
 }*/
 
 if ($tradizione != '') {
-	if ($tradizione > 1) {
-		$query_tradizione = "AND (la.presenteTradizione_id = " . $tradizione . " OR lb.presenteTradizione_id = " . $tradizione . " OR lc.presenteTradizione_id = " . $tradizione . ")";
-	} else {
-		$query_tradizione = "AND la.presenteTradizione_id=1 AND lb.presenteTradizione_id=1 AND lc.presenteTradizione_id=1";
-	}
-	
+  if ($tradizione > 1) {
+    $query_tradizione = "AND (la.presenteTradizione_id = " . $tradizione . " OR lb.presenteTradizione_id = " . $tradizione . " OR lc.presenteTradizione_id = " . $tradizione . ")";
+  } else {
+    $query_tradizione = "AND la.presenteTradizione_id=1 AND lb.presenteTradizione_id=1 AND lc.presenteTradizione_id=1";
+  }
+  
 } else {
-	$query_tradizione = "";
+  $query_tradizione = "";
 }
 
 
 /*
 if ($eco != '') {
-	if ($eco < 2) {
-		$query_eco = "AND (la.eco_id = " . $eco . " OR lb.eco_id = " . $eco . " OR lc.eco_id = " . $eco . ")";
-	} else {
-		$query_eco = "AND la.eco_id=2 AND lb.eco_id=2 AND lc.eco_id=2";
-	}
-	
+  if ($eco < 2) {
+    $query_eco = "AND (la.eco_id = " . $eco . " OR lb.eco_id = " . $eco . " OR lc.eco_id = " . $eco . ")";
+  } else {
+    $query_eco = "AND la.eco_id=2 AND lb.eco_id=2 AND lc.eco_id=2";
+  }
+  
 } else {
-	$query_eco = "";
+  $query_eco = "";
 }
 */
 
@@ -131,51 +135,51 @@ if ($eco != '') {
 
 /*  per il momento lo togliamo
 if ($source != '') {
-	$query_source = "AND (ar.Source_id != 1 OR br.Source_id != 1 OR cr.Source_id != 1)";
+  $query_source = "AND (ar.Source_id != 1 OR br.Source_id != 1 OR cr.Source_id != 1)";
 } else {
-	$query_source = "";
+  $query_source = "";
 }
 */
 
 
 if ($from_cantica != '') {
-	$query_from_cantica = "AND versi.cantica_id >= " . $from_cantica . "";
+  $query_from_cantica = "AND versi.cantica_id >= " . $from_cantica . "";
 } else {
-	$query_from_cantica = "";
+  $query_from_cantica = "";
 }
 if ($from_canto != '') {
-	$query_from_canto = "AND versi.canto_numero >= " . $from_canto . "";
+  $query_from_canto = "AND versi.canto_numero >= " . $from_canto . "";
 } else {
-	$query_from_canto = "";
+  $query_from_canto = "";
 }
 if ($from_verso != '') {
-	$query_from_verso = "AND versi.verso >= " . $from_verso . "";
+  $query_from_verso = "AND versi.verso >= " . $from_verso . "";
 } else {
-	$query_from_verso = "";
+  $query_from_verso = "";
 }
 
 
 if ($to_cantica != '') {
-	$query_to_cantica = "AND versi.cantica_id <= " . $to_cantica . "";
+  $query_to_cantica = "AND versi.cantica_id <= " . $to_cantica . "";
 } else {
-	$query_to_cantica = "";
+  $query_to_cantica = "";
 } 
 if ($to_canto != '') {
-	$query_to_canto = "AND versi.canto_numero <= " . $to_canto . "";
+  $query_to_canto = "AND versi.canto_numero <= " . $to_canto . "";
 } else {
-	$query_to_canto = "";
+  $query_to_canto = "";
 }
 if ($to_verso != '') {
-	$query_to_verso = "AND versi.verso <= " . $to_verso . "";
+  $query_to_verso = "AND versi.verso <= " . $to_verso . "";
 } else {
-	$query_to_verso = "";
+  $query_to_verso = "";
 }
 
 
 if ($witcomb != '') {
-	$query_witcomb = "AND annotazioni.combinazioni_id = " . $witcomb . "";
+  $query_witcomb = "AND annotazioni.combinazioni_id = " . $witcomb . "";
 } else {
-	$query_witcomb = "";
+  $query_witcomb = "";
 }
 
 
@@ -187,23 +191,23 @@ etc
 poi mettere witnesscombination nella query
 
 if ($wit1 != '') {
-	$N = count($wit1);
+  $N = count($wit1);
      for($i=0; $i < $N; $i++)
     {
       echo($wit1[$i] . " ");
     }
 } else {
-	$wit1 = "";
+  $wit1 = "";
 }
 
 if ($wit2 != '') {
-	$N = count($wit2);
+  $N = count($wit2);
      for($i=0; $i < $N; $i++)
     {
       echo($wit2[$i] . " ");
     }
 } else {
-	$wit2 = "";
+  $wit2 = "";
 }
 */
 
@@ -291,12 +295,15 @@ while ($row=mysqli_fetch_array($query))
 
 // $sequence=$row['Sequence_id'];
 
+
+
 $commento = $row['commento'];
-$myvar = "<button>Nota</button><div class='commento'>" . $commento . "</div>";
+
+$myvar = "<button>Nota</button><div style='display:none'>" . $commento . "</div>";
 
 
 // ".($row['ecoa'] == '1' ? "<u>" : "")."
-	
+  
 echo"<tr>";
 echo"<td>";
 echo $row['cantica'];
@@ -327,11 +334,13 @@ echo $row['lezionep'];
 echo"</td>";
 echo"<td>";
 if (!empty($commento)) {
-	echo $myvar;
+  echo $myvar;
+
 /*
-	echo $row['commento'];
-	echo"</div>";
+  echo $row['commento'];
+  echo"</div>";
 */
+
 } else { echo "";}
 
 echo"</td>";
